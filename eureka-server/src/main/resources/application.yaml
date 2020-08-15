@@ -1,6 +1,6 @@
-server:
-  port: 8761
-
+spring:
+  profiles:
+    active: master
 eureka:
   client:
     registerWithEureka: false

@@ -12,6 +12,8 @@
     <modules>
         <module>eureka-server</module>
         <module>eureka-client-provider</module>
+        <module>ribbon-demo</module>
+        <module>user-service</module>
     </modules>
 
     <parent>

@@ -7,3 +7,18 @@ eureka:
 spring:
   application:
     name: ribbon-demo
+#ribbon:
+#  eureka:
+#    enabled: false
+#user-service:
+#   ribbon:
+#     listOfServers: localhost:8181,localhost:8182
+
+# 指定user-service的负载策略
+#user-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.csdn.ribbon.rule.MyRule
+ribbon:
+  eager-load:
+    enabled : true
+    clients : user-service

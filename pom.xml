@@ -15,6 +15,7 @@
         <module>ribbon-demo</module>
         <module>user-service</module>
         <module>feign-demo</module>
+        <module>hystrix-demo</module>
     </modules>
 
     <parent>

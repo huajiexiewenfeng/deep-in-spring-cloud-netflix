@@ -14,4 +14,14 @@ public class UserServiceFeignFallback implements UserServiceFeignApi {
     public User getUser(Long id) {
         return new User(id, "fallback");
     }
+
+    @Override
+    public User getException(Long id) throws Exception {
+        return  new User(id, "fallback");
+    }
+
+    @Override
+    public String addUser(User user) {
+        return "fallback";
+    }
 }

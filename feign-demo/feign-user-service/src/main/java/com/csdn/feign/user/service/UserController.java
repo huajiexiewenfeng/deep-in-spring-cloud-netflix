@@ -19,4 +19,15 @@ public class UserController implements UserServiceFeignApi {
         return user;
     }
 
+    @Override
+    public User getException(Long id) throws Exception {
+        throw new Exception("故意抛出异常");
+    }
+
+    @Override
+    public String addUser(User user) {
+        System.out.println("feign ObjectParam : "+user);
+        return null;
+    }
+
 }

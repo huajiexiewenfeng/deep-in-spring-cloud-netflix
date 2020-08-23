@@ -14,6 +14,21 @@ public class UserServiceFeignFallbackFactory implements FallbackFactory<UserServ
 
     @Override
     public UserServiceFeignApi create(Throwable cause) {
-        return id -> new User(id, "fallback");
+        return new UserServiceFeignApi() {
+            @Override
+            public User getUser(Long id) {
+                return null;
+            }
+
+            @Override
+            public User getException(Long id) throws Exception {
+                return null;
+            }
+
+            @Override
+            public String addUser(User user) {
+                return null;
+            }
+        };
     }
 }

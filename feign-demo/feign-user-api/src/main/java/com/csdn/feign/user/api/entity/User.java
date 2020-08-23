@@ -30,4 +30,12 @@ public class User {
         this.id = id;
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

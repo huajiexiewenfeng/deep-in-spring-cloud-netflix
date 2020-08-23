@@ -21,4 +21,16 @@ public class UserController {
         User user = userServiceFeignApi.getUser(id);
         return user;
     }
+
+    @GetMapping("/feign/getException")
+    public User getException(Long id) throws Exception {
+        User user = userServiceFeignApi.getException(id);
+        return user;
+    }
+
+    @GetMapping("/feign/addUser")
+    public String addUser() {
+        User user = new User(1L,"xwf");
+        return userServiceFeignApi.addUser(user);
+    }
 }

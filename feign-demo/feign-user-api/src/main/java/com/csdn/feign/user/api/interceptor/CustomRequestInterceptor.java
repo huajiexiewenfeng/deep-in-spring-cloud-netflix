@@ -8,7 +8,7 @@ public class CustomRequestInterceptor implements RequestInterceptor {
 	@Override
 	public void apply(RequestTemplate template) {
 		System.err.println(template.url());
-		template.header("myHeader", "xx.com");
+		template.header("myHeader", "blog.csdn.net");
 	}
 
 }

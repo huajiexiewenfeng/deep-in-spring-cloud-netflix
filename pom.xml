@@ -16,6 +16,7 @@
         <module>user-service</module>
         <module>feign-demo</module>
         <module>hystrix-demo</module>
+        <module>zuul-server</module>
     </modules>
 
     <parent>

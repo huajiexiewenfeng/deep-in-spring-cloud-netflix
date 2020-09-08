@@ -2,6 +2,7 @@ package com.csdn.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.EnableZuulServer;
 
@@ -12,6 +13,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulServer;
 @SpringBootApplication
 //@EnableZuulServer 一般不会使用，功能较弱
 @EnableZuulProxy
+@EnableEurekaClient
 public class ZuulServer {
     public static void main(String[] args) {
         SpringApplication.run(ZuulServer.class, args);

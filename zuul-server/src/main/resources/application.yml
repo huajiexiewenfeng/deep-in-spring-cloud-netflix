@@ -3,11 +3,14 @@ server:
 spring:
   application:
     name: zuul-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
 zuul:
   routes:
-    zjiaoweb-route:
+    user-route:
       path: /user/**
       serviceId: user-service
-      sensitiveHeaders: "*"
 
 

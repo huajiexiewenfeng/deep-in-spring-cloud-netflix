@@ -7,22 +7,46 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
-#zuul:
-#  routes:
-#    user-route:
-#      path: /user/**
-#      serviceId: user-service
-
-# URL 路由
 zuul:
   routes:
-    user-servic:
+    user-route:
       path: /user/**
-      url: http://127.0.0.1:8181/
-# 前缀路由
+      serviceId: user-service
+
+## URL 路由
+#zuul:
+#  routes:
+#    user-servic:
+#      path: /user/**
+#      url: http://127.0.0.1:8181/
+## 前缀路由
 #zuul:
 #  prefix: /openapi
 #  routes:
 #    user-service:
 #      path: /user-service/**
 
+## Ribbon 路由
+#zuul:
+#  routes:
+#    echo:
+#      path: /myusers/**
+#      serviceId: myusers-service
+#      stripPrefix: true
+#
+#hystrix:
+#  command:
+#    myusers-service:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: ...
+#
+#myusers-service:
+#  ribbon:
+#    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+#    listOfServers: https://example1.com,http://example2.com
+#    ConnectTimeout: 1000
+#    ReadTimeout: 3000
+#    MaxTotalHttpConnections: 500
+#    MaxConnectionsPerHost: 100

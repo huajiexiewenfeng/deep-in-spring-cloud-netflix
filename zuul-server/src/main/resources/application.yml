@@ -19,6 +19,7 @@ zuul:
 #    user-servic:
 #      path: /user/**
 #      url: http://127.0.0.1:8181/
+
 ## 前缀路由
 #zuul:
 #  prefix: /openapi

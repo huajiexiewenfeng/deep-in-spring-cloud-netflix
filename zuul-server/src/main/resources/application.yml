@@ -51,3 +51,8 @@ zuul:
 #    ReadTimeout: 3000
 #    MaxTotalHttpConnections: 500
 #    MaxConnectionsPerHost: 100
+# 暴露端点
+management.endpoints.web.exposure.include=*
+
+# 开启Debug
+zuul.include-debug-header=true

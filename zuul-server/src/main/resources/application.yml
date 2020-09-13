@@ -13,46 +13,55 @@ zuul:
       path: /user/**
       serviceId: user-service
 
-## URL 路由
-#zuul:
-#  routes:
-#    user-servic:
-#      path: /user/**
-#      url: http://127.0.0.1:8181/
+  ## URL 路由
+  #zuul:
+  #  routes:
+  #    user-servic:
+  #      path: /user/**
+  #      url: http://127.0.0.1:8181/
 
-## 前缀路由
-#zuul:
-#  prefix: /openapi
-#  routes:
-#    user-service:
-#      path: /user-service/**
+  ## 前缀路由
+  #zuul:
+  #  prefix: /openapi
+  #  routes:
+  #    user-service:
+  #      path: /user-service/**
 
-## Ribbon 路由
-#zuul:
-#  routes:
-#    echo:
-#      path: /myusers/**
-#      serviceId: myusers-service
-#      stripPrefix: true
-#
-#hystrix:
-#  command:
-#    myusers-service:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: ...
-#
-#myusers-service:
-#  ribbon:
-#    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-#    listOfServers: https://example1.com,http://example2.com
-#    ConnectTimeout: 1000
-#    ReadTimeout: 3000
-#    MaxTotalHttpConnections: 500
-#    MaxConnectionsPerHost: 100
+  ## Ribbon 路由
+  #zuul:
+  #  routes:
+  #    echo:
+  #      path: /myusers/**
+  #      serviceId: myusers-service
+  #      stripPrefix: true
+  #
+  #hystrix:
+  #  command:
+  #    myusers-service:
+  #      execution:
+  #        isolation:
+  #          thread:
+  #            timeoutInMilliseconds: ...
+  #
+  #myusers-service:
+  #  ribbon:
+  #    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+  #    listOfServers: https://example1.com,http://example2.com
+  #    ConnectTimeout: 1000
+  #    ReadTimeout: 3000
+  #    MaxTotalHttpConnections: 500
+  #    MaxConnectionsPerHost: 100
+
+  # 开启Debug
+  include-debug-header: true
+  debug:
+#    parameter: true
+    request: true
+
+
 # 暴露端点
-management.endpoints.web.exposure.include=*
-
-# 开启Debug
-zuul.include-debug-header=true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
